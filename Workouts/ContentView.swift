@@ -6,10 +6,15 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
 
 struct ContentView: View {
     
+    let db = Firestore.firestore()
+        
     @Environment(\.colorScheme) var colorScheme
+    
+    @State private var title = ""
     
     var body: some View {
         NavigationStack {
@@ -28,13 +33,31 @@ struct ContentView: View {
                     .buttonStyle(.bordered)
                     .tint(colorScheme == .light ? .black : .white)
                     .foregroundColor(colorScheme == .light ? .black : .white)
+                    .fontWeight(.bold)
+                    .padding()
+                    
+                    Spacer()
+                    
+                    TextField("Workouts to add", text: $title)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding()
+                    
+                    
+                    Button {
+                        addTodoToFirestore(title: title)
+                    } label : {
+                        Text("submit to firebase")
+                            .frame(height: 60)
+                            .frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(.bordered)
+                    .foregroundColor(colorScheme == .light ? .black : .white)
+                    .fontWeight(.bold)
+                    .padding()
                     
                     Spacer()
                 }
                 .padding()
-                
-                
-                
             }
             .ignoresSafeArea()
             .navigationTitle("Workout Home")
@@ -44,6 +67,14 @@ struct ContentView: View {
 
     }
 
+}
+func addTodoToFirestore(title: String) {
+    let db = Firestore.firestore()
+    
+    db.collection("todos").addDocument(data: [
+        "title": title,
+        "completed": false
+    ])
 }
 
 

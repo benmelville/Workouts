@@ -16,6 +16,9 @@
 		1D9D515C2AB00010004B6CCA /* Exercises.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9D515B2AB00010004B6CCA /* Exercises.swift */; };
 		1D9D515E2AB00507004B6CCA /* ExerciseTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9D515D2AB00507004B6CCA /* ExerciseTitleView.swift */; };
 		1D9D51602AB00AA0004B6CCA /* WorkoutDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9D515F2AB00AA0004B6CCA /* WorkoutDetailView.swift */; };
+		1D9D51632AB0356D004B6CCA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9D51622AB0356D004B6CCA /* FirebaseFirestore */; };
+		1D9D51652AB0356D004B6CCA /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1D9D51642AB0356D004B6CCA /* FirebaseFirestoreSwift */; };
+		1D9D51672AB0363B004B6CCA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D9D51662AB0363B004B6CCA /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,7 @@
 		1D9D515B2AB00010004B6CCA /* Exercises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercises.swift; sourceTree = "<group>"; };
 		1D9D515D2AB00507004B6CCA /* ExerciseTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTitleView.swift; sourceTree = "<group>"; };
 		1D9D515F2AB00AA0004B6CCA /* WorkoutDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailView.swift; sourceTree = "<group>"; };
+		1D9D51662AB0363B004B6CCA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +40,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D9D51632AB0356D004B6CCA /* FirebaseFirestore in Frameworks */,
+				1D9D51652AB0356D004B6CCA /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +67,7 @@
 		1D9D51462AAFEBDE004B6CCA /* Workouts */ = {
 			isa = PBXGroup;
 			children = (
+				1D9D51662AB0363B004B6CCA /* GoogleService-Info.plist */,
 				1D9D51472AAFEBDE004B6CCA /* WorkoutsApp.swift */,
 				1D9D51492AAFEBDE004B6CCA /* ContentView.swift */,
 				1D9D514B2AAFEBDF004B6CCA /* Assets.xcassets */,
@@ -98,6 +105,10 @@
 			dependencies = (
 			);
 			name = Workouts;
+			packageProductDependencies = (
+				1D9D51622AB0356D004B6CCA /* FirebaseFirestore */,
+				1D9D51642AB0356D004B6CCA /* FirebaseFirestoreSwift */,
+			);
 			productName = Workouts;
 			productReference = 1D9D51442AAFEBDE004B6CCA /* Workouts.app */;
 			productType = "com.apple.product-type.application";
@@ -126,6 +137,9 @@
 				Base,
 			);
 			mainGroup = 1D9D513B2AAFEBDE004B6CCA;
+			packageReferences = (
+				1D9D51612AB0356D004B6CCA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 1D9D51452AAFEBDE004B6CCA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -142,6 +156,7 @@
 			files = (
 				1D9D514F2AAFEBDF004B6CCA /* Preview Assets.xcassets in Resources */,
 				1D9D514C2AAFEBDF004B6CCA /* Assets.xcassets in Resources */,
+				1D9D51672AB0363B004B6CCA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +374,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1D9D51612AB0356D004B6CCA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1D9D51622AB0356D004B6CCA /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D9D51612AB0356D004B6CCA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		1D9D51642AB0356D004B6CCA /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D9D51612AB0356D004B6CCA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1D9D513C2AAFEBDE004B6CCA /* Project object */;
 }
