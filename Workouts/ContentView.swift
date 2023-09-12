@@ -46,7 +46,7 @@ struct ContentView: View {
                     Button {
                         addTodoToFirestore(title: title)
                     } label : {
-                        Text("submit to firebase")
+                        Text("add workout")
                             .frame(height: 60)
                             .frame(maxWidth: .infinity)
                     }
