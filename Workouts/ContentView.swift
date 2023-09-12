@@ -23,6 +23,7 @@ struct ContentView: View {
                 
                 VStack {
                     
+                    
                     Spacer()
                     
                     NavigationLink(destination: WorkoutsGridView()) {
@@ -34,7 +35,16 @@ struct ContentView: View {
                     .tint(colorScheme == .light ? .black : .white)
                     .foregroundColor(colorScheme == .light ? .black : .white)
                     .fontWeight(.bold)
-                    .padding()
+                    .padding(.top, 40)
+                    
+                    
+                    Image("strong_arm")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 200, height: 200)
+                        .foregroundColor(colorScheme == .light ? .black : .white)
+                        .padding(.top, 50)
+                        
                     
                     Spacer()
                     
@@ -46,7 +56,7 @@ struct ContentView: View {
                     Button {
                         addTodoToFirestore(title: title)
                     } label : {
-                        Text("add workout")
+                        Text("Add Workout")
                             .frame(height: 60)
                             .frame(maxWidth: .infinity)
                     }
